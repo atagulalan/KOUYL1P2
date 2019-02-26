@@ -1,0 +1,389 @@
+﻿<Window UseLayoutRounding="True" SnapsToDevicePixels="True" x:Class="Pinver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pinver"
+        mc:Ignorable="d" Height="1730" Width="525" WindowStartupLocation="CenterScreen" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" SizeChanged="Window_SizeChanged" Icon="ap.ico">
+    <Grid UseLayoutRounding="True" SnapsToDevicePixels="True">
+        <ScrollViewer UseLayoutRounding="True" SnapsToDevicePixels="True" PreviewMouseWheel="tekerlegiEngelle" x:Name="scroller" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" CanContentScroll="True" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Width="517" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                <Grid x:Name="a1" HorizontalAlignment="Center" Width="517" VerticalAlignment="Center" Height="319" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid Margin="58,131,53,49" Height="139" VerticalAlignment="Center" HorizontalAlignment="Center" Width="406">
+                        <Button x:Name="olusturButon" Content="Devam Et" VerticalAlignment="Top" Height="40" HorizontalAlignment="Center" Width="102" Click="olusturButon_Click" Margin="270,21,34,0" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" IsEnabled="False" Cursor="Hand" TabIndex="3">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="20"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </Button.Effect>
+                        </Button>
+                        <TextBox PreviewTextInput="sayiGirisKontrolu" x:Name="NBox" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="155,21,201,0" HorizontalAlignment="Center" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="1" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" TextChanged="MorNChanged" TabIndex="1">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox PreviewTextInput="sayiGirisKontrolu" x:Name="MBox" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="83,21,273,0" HorizontalAlignment="Center" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="1" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" TextChanged="MorNChanged" TabIndex="0">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <Label x:Name="MLabel" Content="MxN:" VerticalAlignment="Top" Margin="34,21,328,0" Height="40" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="44" FontSize="14" HorizontalContentAlignment="Right" Foreground="#FF454647" FontFamily="Segoe UI Semibold"/>
+                        <Label x:Name="NLabel" Content="x" VerticalAlignment="Top" Margin="138,21,256,0" Height="40" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="12" HorizontalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="10" Foreground="#FF454647"/>
+                        <Button x:Name="otomatikOlusturButon" Content="Otomatik oluştur" VerticalAlignment="Top" Margin="59,80,60,0" Height="40" Click="otomatikOlusturButon_Click" HorizontalAlignment="Center" Width="225" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" Cursor="Hand" TabIndex="4">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="20"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </Button.Effect>
+                        </Button>
+                        <Button x:Name="degistirButon" Content="⇋" VerticalAlignment="Top" Margin="192,22,122,0" Height="40" Width="40" Click="degistirButon_Click" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" Cursor="Hand" TabIndex="2">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="20"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </Button.Effect>
+                        </Button>
+                    </Grid>
+                    <Label x:Name="label" Content="Aşama 1" VerticalAlignment="Center" FontSize="26" Margin="148,26,143,228" Height="65" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="226" FontFamily="Segoe UI Bold" Foreground="#FF454647"/>
+                    <Label x:Name="a1aciklama" Content="Lütfen MxN, M≠N bir matris tanımlayın." VerticalAlignment="Center" Margin="10,96,10,193" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="497" Padding="0" FontFamily="Segoe UI Semibold" FontSize="16" Foreground="#FF454647"/>
+                </Grid>
+                <Grid x:Name="a2" Height="510" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                    <Label x:Name="label2" Content="Aşama 2" VerticalAlignment="Center" FontSize="26" Margin="148,22,143,424" Height="64" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="226" FontFamily="Segoe UI Bold" Foreground="#FF454647"/>
+                    <Label x:Name="a2aciklama" Content="Lütfen matris elemanlarını girin." VerticalAlignment="Center" Margin="10,92,10,388" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="497" Padding="0" FontFamily="Segoe UI Semibold" FontSize="16" Foreground="#FF454647"/>
+                    <Button x:Name="geriDonButon" Content="←" Margin="28,235,449,235" Width="40" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,6" FontSize="20" Foreground="#FF454647" Cursor="Hand" Click="geriDonButon_Click" Height="40" VerticalAlignment="Center" TabIndex="5">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                    <Grid x:Name="allGrid" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="220">
+                        <TextBox x:Name="b11" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,0,180,180" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="6">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b12" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="45,0,135,180" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="7">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b13" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="90,0,90,180" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="8">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b14" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="135,0,45,180" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="9">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b15" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="180,0,0,180" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="10">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b21" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,45,180,135" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="11">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b22" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="45,45,135,135" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="12">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b23" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="90,45,90,135" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="13">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b24" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="135,45,45,135" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="14">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b25" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="180,45,0,135" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="15">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b31" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,90,180,90" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="16">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b32" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="45,90,135,90" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="17">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b33" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="90" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="18">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b34" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="135,90,45,90" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="19">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b35" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="180,90,0,90" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="20">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b41" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,135,180,45" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="21">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b42" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="45,135,135,45" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="22">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b43" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="90,135,90,45" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="23">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b44" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="135,135,45,45" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="24">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b45" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="180,135,0,45" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="25">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b51" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,180,180,0" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="26">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b52" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="45,180,135,0" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="27">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b53" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="90,180,90,0" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="28">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b54" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="135,180,45,0" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="29">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                        <TextBox x:Name="b55" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="180,180,0,0" HorizontalAlignment="Left" Width="40" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FF454647" RenderTransformOrigin="0.64,0.7" VerticalContentAlignment="Center" TextChanged="CheckForFullMatris" TabIndex="30">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                            </TextBox.Effect>
+                        </TextBox>
+                    </Grid>
+                    <Button x:Name="otomatikMatrisElemanlari" Content="Otomatik oluştur" VerticalAlignment="Center" Margin="118,417,247,53" Height="40" HorizontalAlignment="Center" Width="152" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" Cursor="Hand" Click="otomatikMatrisElemanlari_Click" TabIndex="32">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button x:Name="asama2DevamEt" Content="Devam Et" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="111" Margin="288,417,118,53" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" IsEnabled="False" Cursor="Hand" Click="asama2DevamEt_Click" TabIndex="33">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button x:Name="matrisTemizle" Content="⟲" Margin="449,235,28,235" Width="40" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,6" FontSize="20" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="matrisTemizle_Click" TabIndex="31">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
+                <Grid x:Name="a3" Height="510" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                    <Label x:Name="label3" Content="Aşama 3" VerticalAlignment="Center" FontSize="26" Margin="148,22,143,426" Height="64" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="226" FontFamily="Segoe UI Bold" Foreground="#FF454647"/>
+                    <Border BorderBrush="{x:Null}" Height="50" Margin="0,85,0,375" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="a3aciklama" Text="Girdiğiniz matrisin tersi aşağıdadır. (A⁺)" Margin="10,0" Width="497" Padding="0" FontFamily="Segoe UI Semibold" FontSize="16" Foreground="#FF454647" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
+                    </Border>
+                    <Button x:Name="geriDonButon2" Content="←" Margin="28,235,449,235" Width="40" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,6" FontSize="20" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="geriDonButon2_Click" TabIndex="34">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button x:Name="asama3DevamEt" Content="Devam Et" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="111" Margin="203,436,203,34" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" Cursor="Hand" Click="asama3DevamEt_Click" TabIndex="40">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                    <Grid x:Name="showGrid" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="340" Height="220">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="270" Opacity="0.1" RenderingBias="Quality"/>
+                        </Grid.Effect>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="t11" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                        <Label x:Name="t12" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                        <Label x:Name="t13" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="0"/>
+                        <Label x:Name="t14" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="0"/>
+                        <Label x:Name="t15" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="0"/>
+                        <Label x:Name="t21" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                        <Label x:Name="t22" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+                        <Label x:Name="t23" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+                        <Label x:Name="t24" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1"/>
+                        <Label x:Name="t25" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="1"/>
+                        <Label x:Name="t31" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                        <Label x:Name="t32" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+                        <Label x:Name="t33" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="2"/>
+                        <Label x:Name="t34" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="2"/>
+                        <Label x:Name="t35" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="2"/>
+                        <Label x:Name="t41" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                        <Label x:Name="t42" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+                        <Label x:Name="t43" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="3"/>
+                        <Label x:Name="t44" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3"/>
+                        <Label x:Name="t45" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="3"/>
+                        <Label x:Name="t51" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+                        <Label x:Name="t52" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+                        <Label x:Name="t53" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="4"/>
+                        <Label x:Name="t54" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="4"/>
+                        <Label x:Name="t55" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="68" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="4"/>
+                    </Grid>
+                    <Border Margin="111,375,112,95" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center">
+                        <Grid VerticalAlignment="Center">
+                            <Button x:Name="aTGoster" Content="Aᵀ" Margin="45,0,209,0" Width="40" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,2" FontSize="16" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="aTGoster_Click" TabIndex="36">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Effect>
+                                    <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                                </Button.Effect>
+                            </Button>
+                            <Button x:Name="aGoster" Content="A" Margin="0,0,254,0" Width="40" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,2" FontSize="16" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="aGoster_Click" TabIndex="35">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Effect>
+                                    <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                                </Button.Effect>
+                            </Button>
+                            <Button x:Name="aTaGoster" Content="Aᵀ.A" Margin="90,0,164,0" Width="40" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,2" FontSize="16" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="aTaGoster_Click" TabIndex="37">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Effect>
+                                    <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                                </Button.Effect>
+                            </Button>
+                            <Button x:Name="aTaM1Goster" Content="(Aᵀ.A)⁻¹" Margin="135,0,94,0" Width="65" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,2" FontSize="16" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="aTaM1Goster_Click" TabIndex="38">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Effect>
+                                    <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                                </Button.Effect>
+                            </Button>
+                            <Button x:Name="aPGoster" Content="(Aᵀ.A)⁻¹.Aᵀ" Margin="205,0,0,0" Width="89" Background="White" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,2" FontSize="16" Foreground="#FF454647" Cursor="Hand" Height="40" VerticalAlignment="Center" Click="aPGoster_Click" TabIndex="39">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Effect>
+                                    <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                                </Button.Effect>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid x:Name="a4" Height="319" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                    <Label x:Name="label_Copy" Content="Aşama 4" VerticalAlignment="Center" FontSize="26" Margin="148,26,143,228" Height="65" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="226" FontFamily="Segoe UI Bold" Foreground="#FF454647"/>
+                    <Label x:Name="a1aciklama_Copy" Content="Yapılan işlemin karmaşıklığı aşağıda belirtilmiştir." VerticalAlignment="Center" Margin="10,96,10,193" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="497" Padding="0" FontFamily="Segoe UI Semibold" FontSize="16" Foreground="#FF454647"/>
+                    <Label x:Name="toplama" Content="Toplama İşlemi: " VerticalAlignment="Center" Margin="10,141,10,148" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="497" Padding="0" FontFamily="Segoe UI Semibold" FontSize="16" Foreground="#FF454647"/>
+                    <Label x:Name="carpma" Content="Çarpma İşlemi: " VerticalAlignment="Center" Margin="10,176,10,113" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="497" Padding="0" FontFamily="Segoe UI Semibold" FontSize="16" Foreground="#FF454647"/>
+                    <Button x:Name="bastanBasla" Content="Baştan Başla" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="111" Margin="263,236,143,43" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" Cursor="Hand" TabIndex="40" Click="bastanBasla_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button x:Name="geriDonButon3" Content="Geri Dön" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="111" Margin="147,236,259,43" Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Semibold" Padding="1,1,1,4" FontSize="14" Foreground="#FF454647" Cursor="Hand" TabIndex="40" Click="geriDonButon3_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Effect>
+                            <DropShadowEffect Direction="270" RenderingBias="Quality" Opacity="0.05" BlurRadius="10" ShadowDepth="4"/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
